@@ -1,0 +1,26 @@
+.ant-checkbox-wrapper + .ant-checkbox-wrapper {
+	margin-left: 0;
+	//margin-right: 8px;
+}
+label.ant-checkbox-wrapper {
+	margin-right: 8px;
+}
+
+.ant-checkbox {
+	.ant-checkbox-inner {
+		width: 16px;
+		height: 16px;
+	}
+
+	&.ant-checkbox-checked {
+		.ant-checkbox-inner {
+			&:after {
+				top: 2px;
+				left: 5px;
+				width: 5px;
+				height: 9px;
+				border-width: 2px;
+			}
+		}
+	}
+}

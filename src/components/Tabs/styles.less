@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+:global(.ant-tabs-tab-active) {
+	height: auto;
+	// background-image: @green-gradient;
+	font-family: LetoSans;
+	font-size: 22px;
+	font-weight: bold;
+	text-align: left;
+	.text-gradient(@green-gradient);
+}
+
+:global(.ant-tabs-tab) {
+	font-family: LetoSans;
+	font-size: 22px;
+	text-align: left;
+	color: @black;
+}

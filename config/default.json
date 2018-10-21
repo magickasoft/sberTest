@@ -1,0 +1,8 @@
+{
+  "url": "http://18.216.85.157:3002/",
+  "version": "v1/",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  }
+}

@@ -1,0 +1,25 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.logo {
+    position: relative;
+    width: 240px;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+
+    &:focus {
+        text-decoration: none;
+    }
+    
+    &-text {
+        font-family: LetoSans, sans-serif;
+        font-size: 22px;
+        line-height: 23px;
+        padding-left: 5px;
+        .text-gradient(@green-gradient);
+    }
+}
