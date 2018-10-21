@@ -140,7 +140,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.scss', '.less'],
+    extensions: ['.webpack.js', '.web.js', '.mjs', '.js', '.scss', '.less'],
     alias: _.mapValues(modulePaths, str =>
       path.join(process.cwd(), ...str.split('/'))
     ),
@@ -150,6 +150,11 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto',
+      },
       {
         test: /\.(js|jsx)$/,
         include: __dirname,

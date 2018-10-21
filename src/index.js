@@ -4,8 +4,10 @@ import { hot } from 'react-hot-loader'
 import { Provider } from 'react-redux';
 import { CookiesProvider } from 'react-cookie'
 import { PersistGate } from 'redux-persist/lib/integration/react';
+import { ApolloProvider } from 'react-apollo';
 import { Router } from 'react-router';
 import { StylesProvider } from 'components';
+import { apolloClient } from 'config';
 import axios from 'utils/axios';
 
 import Root from 'containers';
@@ -31,20 +33,22 @@ const rootElement = document.getElementById('root');
 
 const render = Component => {
   ReactDOM.render(
-    <CookiesProvider>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <div>
-            <StylesProvider>
-              <Router history={history}>
-                <Component />
-              </Router>
-            </StylesProvider>
-            <DevTools />
-          </div>
-        </PersistGate>
-      </Provider>
-    </CookiesProvider>,
+    <ApolloProvider client={apolloClient}>
+      <CookiesProvider>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <div>
+              <StylesProvider>
+                <Router history={history}>
+                  <Component />
+                </Router>
+              </StylesProvider>
+              <DevTools />
+            </div>
+          </PersistGate>
+        </Provider>
+      </CookiesProvider>
+    </ApolloProvider>,
     rootElement
   )
 };

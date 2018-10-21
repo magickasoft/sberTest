@@ -1,17 +1,20 @@
 import { defaultsDeepAll } from 'lodash/fp';
+
 const defaultConfig = require('./default.json');
 
 let localConfig = {};
 
 try {
-    localConfig = localConfig = process.env.NODE_ENV === 'development' ?
-        require('./development.json') :
-        require('./production.json');
+  localConfig = process.env.NODE_ENV === 'development' ?
+    require('./development.json') :
+    require('./production.json');
 } catch (e) {
-    // pass
+  // pass
 }
 
 export default defaultsDeepAll([
-    localConfig,
-    defaultConfig
+  localConfig,
+  defaultConfig
 ]);
+
+export { default as apolloClient } from './apolloConfig'

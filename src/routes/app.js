@@ -1,9 +1,9 @@
-import Users from 'containers/Users/';
+import ProjectList from 'containers/ProjectList/';
 
 const baseRoutes = [
   {
     path: '/',
-    component: Users,
+    component: ProjectList,
     exact: true,
   }
 ];
